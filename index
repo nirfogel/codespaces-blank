@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Guess Who Game</title>
+    <script src="phaser.js"></script>
+    <!-- Additional script files will be added as we progress -->
+</head>
+<body>
+    <!-- Your game content and UI will be added here -->
+    <script>
+        // Your game code will be added here
+        const config = {
+            type: Phaser.AUTO,
+            width: 800,
+            height: 600,
+            scene: {
+                preload: preload,
+                create: create,
+                update: update
+            }
+        };
+
+        const game = new Phaser.Game(config);
+
+        function preload() {
+            // Preload assets like images, sounds, etc.
+            this.load.bitmapFont('font', 'assets/font.png', 'assets/font.fnt');
+        }
+
+        function create() {
+            // Create game objects, set up the scene
+            const text = this.add.bitmapText(400, 550, 'font', 'Hello, Phaser!', 32);
+            text.setOrigin(0.5);
+        }
+
+        function update() {
+            // Update game logic
+        }
+    </script>
+</body>
+</html>
